@@ -5,7 +5,7 @@ library(reshape)
 ############## Step 1: Merges the training and the test sets to create one data set ##############
 
 ## download zip if it doesnt exist ##
-if(!file.exists("getdata-projectfiles-UCI HAR Dataset.zip")|file.exists("UCI HAR Dataset")){
+if(!file.exists("getdata-projectfiles-UCI HAR Dataset.zip")|!file.exists("UCI HAR Dataset")){
   ZipURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
   download.file(ZipURL, destfile="./getdata-projectfiles-UCI HAR Dataset.zip")
   ZipFile <- unzip("getdata-projectfiles-UCI HAR Dataset.zip", exdir = getwd())
@@ -48,7 +48,7 @@ CombinedData <- CombinedData[, Col_Retain] # retain only the relevant columns
 
 ############## Step 3: use descriptive activity names to name the activities in the data set ##############
 # read in the descriptive activity names data
-Desc_Activity <- read.table("./CleaningandGettingData/CourseProject/UCI HAR Dataset/activity_labels.txt", col.names = c("activityID", "ActivityDesc"))
+Desc_Activity <- read.table("./UCI HAR Dataset/activity_labels.txt", col.names = c("activityID", "ActivityDesc"))
 # merge the activity descriptions by activity ID, dont need the merge by vars, this automatically puts the merge key at the front of the data
 CombinedData <- merge(CombinedData, Desc_Activity) # this will merge by activityID
 CombinedData <- select(CombinedData, -(activityID)) # drop the activityID since data now contains desc
@@ -56,7 +56,7 @@ CombinedData <- select(CombinedData, -(activityID)) # drop the activityID since 
 # get rid of the dots first - apply the rename on the final vector
 names(CombinedData) <- gsub("[.]", "", names(CombinedData))
 # get rid of the repeated words for Body
-names(CombinedData) <- gsub("BodyBody", "Body", names(CombinedData))
+names(CombinedData) <- tolower(gsub("BodyBody", "Body", names(CombinedData)))
 
 #remove unnecessary R objects
 rm("Desc_Activity", "Col_Mean", "Col_Std")
@@ -65,9 +65,8 @@ rm("Desc_Activity", "Col_Mean", "Col_Std")
 
 
 ############## Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-# should look like this
 
 # melt the data
-Summary <- melt(CombinedData, id = c("SubjectID", "ActivityDesc"))
-Summary <- cast(Summary, SubjectID + ActivityDesc ~ variable, mean) #obtain the average for each item
+Summary <- melt(CombinedData, id = c("subjectid", "activitydesc"))
+Summary <- cast(Summary, subjectid + activitydesc ~ variable, mean) #obtain the average for each item
 write.table(Summary, file = "./Summary.txt", row.names = FALSE)
