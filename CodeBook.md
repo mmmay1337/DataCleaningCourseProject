@@ -48,37 +48,64 @@ ActivityDesc: description of the activity being performed (e.g. Walking, ). Have
 
 ### Measures
 The following documentation have been simplified:
-*(prefix):     describes if the measure is time or frequency domain signal based (i.e. "t" or "f"). Note that the frequency domain signals have been derived using a Fast Fourier Transform (FFT) on the signals.
-*(direction):  this is the direction of the captured measure, captured in X, Y, Z e.g. X is the X direction. Note that any measures that do not contain the direction is a magnitude i.e. the resulting raw magnitude of the directions combined.
-*Mag: for variables that do not contain (direction), this is the magnitude of the tri-axial (XYZ) direction as calculated using the Euclidean norm.
+(prefix):     describes if the measure is time or frequency domain signal based (i.e. "t" or "f"). Note that the frequency domain signals have been derived using a Fast Fourier Transform (FFT) on the signals.
+
+(direction):  this is the direction of the captured measure, captured in X, Y, Z e.g. X is the X direction. Note that any measures that do not contain the direction is a magnitude i.e. the resulting raw magnitude of the directions combined.
+
+Mag: for variables that do not contain (direction), this is the magnitude of the tri-axial (XYZ) direction as calculated using the Euclidean norm.
 
 Both datasets measures include (noting that the Summary data is the average of these measures, for a given subjectid and activity):
 
-*(prefix)BodyAccJerkMagmean:	Mean magnitude of the body acceleration jerk signals (derived from raw accelerometer data)
-*(prefix)BodyAccJerkMagmeanFreq:	weighted average of the frequency components, from the magnitude of the body acceleration jerk signals (derived from raw accelerometer data)
-*(prefix)BodyAccJerkMagstd:	standard deviation of the magnitude of the body acceleration jerk signals (derived from raw accelerometer data)
-*(prefix)BodyAccJerkmean(direction):	mean of the body acceleration jerk signals (derived from raw accelerometer data), for a given direction
-*(prefix)BodyAccJerkmeanFreq(direction):	weighted average of the frequency components, of the body acceleration jerk signals (derived from raw accelerometer data) for given direction
-*(prefix)BodyAccJerkstd(direction):	standard deviation of the magnitude of the body acceleration jerk signals (derived from raw accelerometer data), for a given direction
-*(prefix)BodyAccMagmean:	Mean magnitude of the body acceleration signals (derived from raw accelerometer data)
-*(prefix)BodyAccMagmeanFreq:	weighted average of the frequency components, from the magnitude of the body acceleration signals (derived from raw accelerometer data)
-*(prefix)BodyAccMagstd:	standard deviation of the magnitude of the body acceleration signals (derived from raw accelerometer data)
-*(prefix)BodyAccmean(direction):	mean of the body acceleration signals (derived from raw accelerometer data), for a given direction
-*(prefix)BodyAccmeanFreq(direction):	weighted average of the frequency components, of the body acceleration signals (derived from raw accelerometer data) for given direction
-*(prefix)BodyAccstd(direction):	standard deviation of the magnitude of the body acceleration signals (derived from raw accelerometer data), for a given direction
-*(prefix)BodyGyroJerkMagmean:	Mean magnitude of the body gyroscope jerk signals (derived from raw gyroscope data)
-*(prefix)BodyGyroJerkMagmeanFreq:	weighted average of the frequency components, from the magnitude of the body gyroscope jerk signals (derived from raw gyroscope data)
-*(prefix)BodyGyroJerkMagstd:	standard deviation of the magnitude of the body gyroscope jerk signals (derived from raw gyroscope data)
-*(prefix)BodyGyroJerkmean(direction):	Mean of the body gyroscope jerk signals (derived from raw gyroscope data), for a given direction
-*(prefix)BodyGyroJerkstd(direction):	standard deviation of the body gyroscope jerk signals (derived from raw gyroscope data), for a given direction
-*(prefix)BodyGyroMagmean:	mean of the body gyroscope magnitude
-*(prefix)BodyGyroMagmeanFreq:	weighted average of the frequency components, from the body gyroscope magnitude
-*(prefix)BodyGyroMagstd:	standar deviation of the body gyroscope signal magnitude
-*(prefix)BodyGyromean(direction):	average of raw body gyroscope signals for a given direction
-*(prefix)BodyGyromeanFreq(direction):	weighted average of the frequency components, from the raw body gyroscope signals for a given direction
-*(prefix)BodyGyrostd(direction):	standard deviation of the raw body gyroscope reading
-*(prefix)GravityAccMagmean:	gravity acceleration signal
-*(prefix)GravityAccMagstd:	standard deviation of the gravity accelerometer magnitude reading
-*(prefix)GravityAccmean(direction):	mean of raw accelerometer reading, for given direction
-*(prefix)GravityAccstd(direction):	standard deviation of raw accelerometer reading, for given direction
+(prefix)BodyAccJerkMagmean:	Mean magnitude of the body acceleration jerk signals (derived from raw accelerometer data)
 
+(prefix)BodyAccJerkMagmeanFreq:	weighted average of the frequency components, from the magnitude of the body acceleration jerk signals (derived from raw accelerometer data)
+
+(prefix)BodyAccJerkMagstd:	standard deviation of the magnitude of the body acceleration jerk signals (derived from raw accelerometer data)
+
+(prefix)BodyAccJerkmean(direction):	mean of the body acceleration jerk signals (derived from raw accelerometer data), for a given direction
+
+(prefix)BodyAccJerkmeanFreq(direction):	weighted average of the frequency components, of the body acceleration jerk signals (derived from raw accelerometer data) for given direction
+
+(prefix)BodyAccJerkstd(direction):	standard deviation of the magnitude of the body acceleration jerk signals (derived from raw accelerometer data), for a given direction
+
+(prefix)BodyAccMagmean:	Mean magnitude of the body acceleration signals (derived from raw accelerometer data)
+
+(prefix)BodyAccMagmeanFreq:	weighted average of the frequency components, from the magnitude of the body acceleration signals (derived from raw accelerometer data)
+
+(prefix)BodyAccMagstd:	standard deviation of the magnitude of the body acceleration signals (derived from raw accelerometer data)
+
+(prefix)BodyAccmean(direction):	mean of the body acceleration signals (derived from raw accelerometer data), for a given direction
+
+(prefix)BodyAccmeanFreq(direction):	weighted average of the frequency components, of the body acceleration signals (derived from raw accelerometer data) for given direction
+
+(prefix)BodyAccstd(direction):	standard deviation of the magnitude of the body acceleration signals (derived from raw accelerometer data), for a given direction
+
+(prefix)BodyGyroJerkMagmean:	Mean magnitude of the body gyroscope jerk signals (derived from raw gyroscope data)
+
+(prefix)BodyGyroJerkMagmeanFreq:	weighted average of the frequency components, from the magnitude of the body gyroscope jerk signals (derived from raw gyroscope data)
+
+(prefix)BodyGyroJerkMagstd:	standard deviation of the magnitude of the body gyroscope jerk signals (derived from raw gyroscope data)
+
+(prefix)BodyGyroJerkmean(direction):	Mean of the body gyroscope jerk signals (derived from raw gyroscope data), for a given direction
+
+(prefix)BodyGyroJerkstd(direction):	standard deviation of the body gyroscope jerk signals (derived from raw gyroscope data), for a given direction
+
+(prefix)BodyGyroMagmean:	mean of the body gyroscope magnitude
+
+(prefix)BodyGyroMagmeanFreq:	weighted average of the frequency components, from the body gyroscope magnitude
+
+(prefix)BodyGyroMagstd:	standar deviation of the body gyroscope signal magnitude
+
+(prefix)BodyGyromean(direction):	average of raw body gyroscope signals for a given direction
+
+(prefix)BodyGyromeanFreq(direction):	weighted average of the frequency components, from the raw body gyroscope signals for a given direction
+
+(prefix)BodyGyrostd(direction):	standard deviation of the raw body gyroscope reading
+
+(prefix)GravityAccMagmean:	gravity acceleration signal
+
+(prefix)GravityAccMagstd:	standard deviation of the gravity accelerometer magnitude reading
+
+(prefix)GravityAccmean(direction):	mean of raw accelerometer reading, for given direction
+
+(prefix)GravityAccstd(direction):	standard deviation of raw accelerometer reading, for given direction
