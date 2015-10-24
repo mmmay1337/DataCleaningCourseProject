@@ -13,19 +13,17 @@
 
    features identifiers 
    activity_labels.txt: this is the corresponding description for each activity ID
-   features.txt: this is the descriptive names of the features captured in the X_<test/train> dataset
+   features.txt: this is the descriptive names of the features captured in the X_(test/train) dataset
 
   relevant features / activity 
-   <test/train>/Subect_<test/train>: this is the corresponding subject ID observation
-                                     for each row, in the <test/train> dataset
-   <test/train>/X_<test/train>:  this file contains the relevant features, from 
-                                 the <test/train> dataset
-   <test/train>/y_<test/train>:  this is the activity ID for the task being performed, 
-                                 from the <test/train> dataset
+   (test/train)/Subect_(test/train): this is the corresponding subject ID observation
+                                     for each row, in the (test/train) dataset
+   (test/train)/X_(test/train):  this file contains the relevant features, from 
+                                 the (test/train) dataset
+   (test/train)/y_(test/train):  this is the activity ID for the task being performed, 
+                                 from the (test/train) dataset
 
 ##  EXPECTED OUTPUTS 
- note that any intermediate datasteps are cleared throughout the code, so that the only 
- remaining R objects are the CombinedData and Summary data.
+note that any intermediate datasteps are cleared throughout the code, so that the only remaining R objects are the CombinedData and Summary data.
 
- for more information on the general procedures of preparing the dataset (and variables),
- please refer to the codebook.
+for more information on the general procedures of preparing the dataset (and variables),please refer to the codebook.
